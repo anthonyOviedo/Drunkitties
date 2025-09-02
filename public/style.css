@@ -1,0 +1,14 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#productos ul {
+  list-style: none;
+  padding: 0;
+}
+
+#resultados img {
+  max-width: 200px;
+  margin: 10px;
+}
