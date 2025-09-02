@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drunkitties - Tienda de Mascotas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Drunkitties</h1>
+  <section id="productos">
+    <h2>Productos</h2>
+    <ul>
+      <li>Camisetas</li>
+      <li>Hoodies</li>
+      <li>Mousepads</li>
+    </ul>
+  </section>
+
+  <section id="personaliza">
+    <h2>Sube la foto de tu mascota</h2>
+    <form id="uploadForm">
+      <input type="file" id="petImage" name="petImage" accept="image/*" required />
+      <button type="submit">Generar diseño</button>
+    </form>
+    <div id="resultados"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
