@@ -1,30 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Drunkitties - Tienda de Mascotas</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <h1>Drunkitties</h1>
-  <section id="productos">
-    <h2>Productos</h2>
-    <ul>
-      <li>Camisetas</li>
-      <li>Hoodies</li>
-      <li>Mousepads</li>
-    </ul>
-  </section>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drunkitties · Diseños únicos para mascotas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="hero__badge">Drunkitties Studio</p>
+        <h1 class="hero__title">Convierte a tu mascota en la estrella de la colección</h1>
+        <p class="hero__subtitle">
+          Sube una foto de tu compañero peludo y deja que nuestra inteligencia artificial imagine
+          diseños únicos para camisetas, hoodies y accesorios irresistibles.
+        </p>
+        <a class="hero__cta" href="#generador">Comenzar</a>
+      </div>
+      <div class="hero__mockup" aria-hidden="true">
+        <div class="mockup-card">
+          <span class="mockup-card__tag">Novedad</span>
+          <p class="mockup-card__title">Colección Urban Whiskers</p>
+          <p class="mockup-card__text">Diseños personalizados con la actitud de tu mascota.</p>
+        </div>
+      </div>
+    </header>
 
-  <section id="personaliza">
-    <h2>Sube la foto de tu mascota</h2>
-    <form id="uploadForm">
-      <input type="file" id="petImage" name="petImage" accept="image/*" required />
-      <button type="submit">Generar diseño</button>
-    </form>
-    <div id="resultados"></div>
-  </section>
+    <main>
+      <section class="highlights" aria-labelledby="destacados">
+        <div class="section-header">
+          <h2 id="destacados">¿Por qué Drunkitties?</h2>
+          <p>Una experiencia completa para crear merchandising premium con tu mascota como protagonista.</p>
+        </div>
+        <div class="highlight-grid">
+          <article class="highlight-card">
+            <h3>Diseños al instante</h3>
+            <p>Genera variaciones en segundos para ver cómo luciría tu mascota en diferentes estilos.</p>
+          </article>
+          <article class="highlight-card">
+            <h3>Listo para imprimir</h3>
+            <p>Descarga los resultados en alta calidad y compártelos con tu imprenta favorita.</p>
+          </article>
+          <article class="highlight-card">
+            <h3>Hecho con cariño</h3>
+            <p>Interfaces claras, mensajes en tu idioma y soporte pensado para pet lovers.</p>
+          </article>
+        </div>
+      </section>
 
-  <script src="app.js"></script>
-</body>
+      <section class="generator" id="generador" aria-labelledby="personaliza">
+        <div class="section-header">
+          <h2 id="personaliza">Generador de diseños</h2>
+          <p>Elige una foto nítida de tu mascota (máx. 4&nbsp;MB) y obtén hasta cuatro variaciones creativas.</p>
+        </div>
+        <form id="uploadForm" class="generator__form" novalidate>
+          <div class="form-field">
+            <label for="petImage">Imagen de tu mascota</label>
+            <input type="file" id="petImage" name="petImage" accept="image/*" required />
+            <p class="field-hint">Formatos recomendados: PNG o JPG con fondo limpio.</p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="variationCount">Número de variaciones</label>
+              <input type="number" id="variationCount" name="variationCount" value="2" min="1" max="4" />
+            </div>
+            <div class="form-field">
+              <label for="imageSize">Tamaño de salida</label>
+              <select id="imageSize" name="imageSize">
+                <option value="512x512">512 × 512</option>
+                <option value="768x768">768 × 768</option>
+                <option value="1024x1024">1024 × 1024</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="preview" id="preview" aria-live="polite">
+            <p class="preview__placeholder">Tu imagen aparecerá aquí en cuanto la selecciones.</p>
+          </div>
+
+          <button type="submit" class="submit-button">Generar diseños</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="assertive"></p>
+        </form>
+
+        <div class="results" id="resultados" aria-live="polite" aria-busy="false"></div>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <div class="section-header">
+          <h2 id="faq-title">Preguntas frecuentes</h2>
+          <p>Todo lo que necesitas saber para preparar la mejor foto de tu mascota.</p>
+        </div>
+        <dl class="faq__list">
+          <div>
+            <dt>¿Qué pasa con mis imágenes?</dt>
+            <dd>
+              Se usan únicamente para generar las variaciones solicitadas. Recuerda añadir tu clave de OpenAI en
+              Netlify para mantener todo seguro.
+            </dd>
+          </div>
+          <div>
+            <dt>¿Puedo descargar los resultados?</dt>
+            <dd>
+              Sí. Haz clic derecho sobre la imagen y selecciona «Guardar imagen como…» para mantener la máxima calidad.
+            </dd>
+          </div>
+          <div>
+            <dt>¿Qué hago si aparece un error?</dt>
+            <dd>
+              Asegúrate de que la imagen pesa menos de 4&nbsp;MB y que tu clave de OpenAI es válida. Si el problema
+              continúa, vuelve a intentarlo en unos minutos.
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Hecho con ❤️ para amantes de los bigotes inquietos.</p>
+      <p class="site-footer__credits">Listo para desplegar en Netlify.</p>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
 </html>
