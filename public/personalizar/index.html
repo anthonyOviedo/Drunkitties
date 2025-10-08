@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personaliza tu producto · Drunkitties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__container">
+        <a class="site-logo" href="/">🐾 Drunkitties</a>
+        <nav class="site-nav" aria-label="Principal">
+          <a href="/">Inicio</a>
+          <a href="/productos/">Productos</a>
+          <a href="/personalizar/" aria-current="page">Personalizar</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <a class="site-header__cta" href="/personalizar/">Empieza ahora</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <span class="page-hero__eyebrow">Producto a personalizar</span>
+        <h1 class="page-hero__title">Mousepad personalizado</h1>
+        <p class="page-hero__price">€8,000</p>
+        <p class="page-hero__subtitle">
+          Convierte tu escritorio en una galería de arte con tu mascota como protagonista. Elige el estilo, tamaño y sube una foto para generar tu diseño único.
+        </p>
+      </section>
+
+      <section class="customization">
+        <div class="customization__grid">
+          <form class="customization__form">
+            <div class="form-field">
+              <label for="petImagePersonalizar">Imagen de tu mascota</label>
+              <input type="file" id="petImagePersonalizar" name="petImagePersonalizar" accept="image/*" />
+              <p class="field-hint">JPG o PNG, máximo 4 MB. Usa una foto nítida y bien iluminada.</p>
+            </div>
+
+            <div class="form-field">
+              <label for="artStyle">Estilo artístico</label>
+              <select id="artStyle" name="artStyle">
+                <option value="pastel">Pastel ilustrado</option>
+                <option value="realista">Realista vibrante</option>
+                <option value="comic">Comic pop</option>
+                <option value="minimalista">Minimalista monocromático</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="productSize">Tamaño del producto</label>
+              <select id="productSize" name="productSize">
+                <option value="pequeno">Pequeño (25 × 20 cm)</option>
+                <option value="mediano">Mediano (32 × 25 cm)</option>
+                <option value="grande">Grande (36 × 30 cm)</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="notes">Notas adicionales</label>
+              <textarea id="notes" name="notes" rows="4" placeholder="Cuéntanos los detalles que quieres resaltar."></textarea>
+            </div>
+
+            <button class="submit-button" type="button">Generar vista previa</button>
+          </form>
+
+          <aside class="customization__preview">
+            <h3>Vista previa generada</h3>
+            <p>¡Aquí aparecerá tu diseño personalizado una vez que generes la vista previa!</p>
+            <div class="preview" aria-live="polite">
+              <p class="preview__placeholder">Sube una imagen para desbloquear la magia felina.</p>
+            </div>
+            <div class="summary-card">
+              <h4>Tu selección</h4>
+              <p><strong>Estilo:</strong> Pastel ilustrado</p>
+              <p><strong>Tamaño:</strong> Pequeño</p>
+              <p class="summary-card__total">Total estimado: €8,000</p>
+              <a class="product-card__cta" href="/carrito/">Añadir al carrito</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>Hecho con ❤️ para amantes de los bigotes inquietos.</p>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="/sobre-nosotros/">Sobre nosotros</a>
+          <a href="/privacidad/">Política de privacidad</a>
+          <a href="/terminos/">Términos y condiciones</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <p class="site-footer__credits">© 2025 Drunkitties Studio. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

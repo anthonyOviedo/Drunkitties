@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrito de compras · Drunkitties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__container">
+        <a class="site-logo" href="/">🐾 Drunkitties</a>
+        <nav class="site-nav" aria-label="Principal">
+          <a href="/">Inicio</a>
+          <a href="/productos/">Productos</a>
+          <a href="/personalizar/">Personalizar</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <a class="site-header__cta" href="/personalizar/">Empieza ahora</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <h1 class="page-hero__title">Tu carrito</h1>
+        <p class="page-hero__subtitle">Revisa tu selección antes de pasar al checkout. Ajusta cantidades o elimina productos cuando quieras.</p>
+      </section>
+
+      <section class="cart-list" aria-label="Resumen de carrito">
+        <article class="cart-item">
+          <div class="cart-item__info">
+            <strong>Mousepad personalizado</strong>
+            <span>Estilo: Pastel ilustrado · Tamaño: Pequeño</span>
+          </div>
+          <strong>€8,000</strong>
+        </article>
+        <article class="cart-item">
+          <div class="cart-item__info">
+            <strong>Taza personalizada</strong>
+            <span>Estilo: Comic pop · Cantidad: 2</span>
+          </div>
+          <strong>€13,000</strong>
+        </article>
+      </section>
+
+      <section class="summary-card" aria-label="Totales">
+        <h2>Resumen</h2>
+        <p><strong>Subtotal:</strong> €21,000</p>
+        <p><strong>Envío:</strong> Gratis</p>
+        <p class="summary-card__total">Total: €21,000</p>
+        <a class="product-card__cta" href="/checkout/">Continuar al pago</a>
+        <a class="button-secondary" href="/productos/">Seguir comprando</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>Hecho con ❤️ para amantes de los bigotes inquietos.</p>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="/sobre-nosotros/">Sobre nosotros</a>
+          <a href="/privacidad/">Política de privacidad</a>
+          <a href="/terminos/">Términos y condiciones</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <p class="site-footer__credits">© 2025 Drunkitties Studio. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

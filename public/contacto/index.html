@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto · Drunkitties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__container">
+        <a class="site-logo" href="/">🐾 Drunkitties</a>
+        <nav class="site-nav" aria-label="Principal">
+          <a href="/">Inicio</a>
+          <a href="/productos/">Productos</a>
+          <a href="/personalizar/">Personalizar</a>
+          <a href="/contacto/" aria-current="page">Contacto</a>
+        </nav>
+        <a class="site-header__cta" href="/personalizar/">Empieza ahora</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <h1 class="page-hero__title">Ponte en contacto</h1>
+        <p class="page-hero__subtitle">¿Tienes dudas, colaboraciones o quieres distribuir Drunkitties en tu tienda? Estamos para ayudarte.</p>
+      </section>
+
+      <section class="customization__grid">
+        <form class="customization__form" aria-label="Formulario de contacto">
+          <div class="form-field">
+            <label for="contactName">Nombre completo</label>
+            <input type="text" id="contactName" name="contactName" placeholder="Tu nombre" />
+          </div>
+          <div class="form-field">
+            <label for="contactEmail">Correo electrónico</label>
+            <input type="email" id="contactEmail" name="contactEmail" placeholder="nombre@ejemplo.com" />
+          </div>
+          <div class="form-field">
+            <label for="topic">Motivo</label>
+            <select id="topic" name="topic">
+              <option value="soporte">Soporte técnico</option>
+              <option value="ventas">Ventas al mayoreo</option>
+              <option value="colaboracion">Colaboraciones</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="5" placeholder="Cuéntanos en qué podemos ayudarte."></textarea>
+          </div>
+          <button class="submit-button" type="button">Enviar mensaje</button>
+        </form>
+
+        <aside class="customization__preview">
+          <h3>Atención personalizada</h3>
+          <p>Respondemos en menos de 24 horas hábiles. También puedes escribirnos directamente a <a href="mailto:hola@drunkitties.studio">hola@drunkitties.studio</a>.</p>
+          <div class="summary-card">
+            <h4>Horarios</h4>
+            <p>Lunes a viernes · 10:00 a 18:00 (CDMX)</p>
+            <p>Sábados · 11:00 a 14:00</p>
+            <p class="summary-card__total">Soporte urgente: +52 55 1234 5678</p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>Hecho con ❤️ para amantes de los bigotes inquietos.</p>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="/sobre-nosotros/">Sobre nosotros</a>
+          <a href="/privacidad/">Política de privacidad</a>
+          <a href="/terminos/">Términos y condiciones</a>
+          <a href="/contacto/" aria-current="page">Contacto</a>
+        </nav>
+        <p class="site-footer__credits">© 2025 Drunkitties Studio. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
