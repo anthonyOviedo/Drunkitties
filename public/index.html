@@ -10,26 +10,41 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="hero">
-      <div class="hero__content">
-        <p class="hero__badge">Drunkitties Studio</p>
-        <h1 class="hero__title">Convierte a tu mascota en la estrella de la colección</h1>
-        <p class="hero__subtitle">
-          Sube una foto de tu compañero peludo y deja que nuestra inteligencia artificial imagine
-          diseños únicos para camisetas, hoodies y accesorios irresistibles.
-        </p>
-        <a class="hero__cta" href="#generador">Comenzar</a>
-      </div>
-      <div class="hero__mockup" aria-hidden="true">
-        <div class="mockup-card">
-          <span class="mockup-card__tag">Novedad</span>
-          <p class="mockup-card__title">Colección Urban Whiskers</p>
-          <p class="mockup-card__text">Diseños personalizados con la actitud de tu mascota.</p>
-        </div>
+    <header class="site-header">
+      <div class="site-header__container">
+        <a class="site-logo" href="/">🐾 Drunkitties</a>
+        <nav class="site-nav" aria-label="Principal">
+          <a href="/" aria-current="page">Inicio</a>
+          <a href="/productos/">Productos</a>
+          <a href="/personalizar/">Personalizar</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <a class="site-header__cta" href="/personalizar/">Empieza ahora</a>
       </div>
     </header>
 
     <main>
+      <section class="hero hero--home">
+        <div class="hero__content">
+          <p class="hero__badge">Drunkitties Studio</p>
+          <h1 class="hero__title">Convierte a tu mascota en la estrella de la colección</h1>
+          <p class="hero__subtitle">
+            Sube una foto de tu compañero peludo y deja que nuestra inteligencia artificial imagine diseños únicos para camisetas, hoodies y accesorios irresistibles.
+          </p>
+          <div class="hero__actions">
+            <a class="hero__cta" href="/personalizar/">Crear un diseño</a>
+            <a class="hero__link" href="/productos/">Ver catálogo</a>
+          </div>
+        </div>
+        <div class="hero__mockup" aria-hidden="true">
+          <div class="mockup-card">
+            <span class="mockup-card__tag">Novedad</span>
+            <p class="mockup-card__title">Colección Urban Whiskers</p>
+            <p class="mockup-card__text">Diseños personalizados con la actitud de tu mascota.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="highlights" aria-labelledby="destacados">
         <div class="section-header">
           <h2 id="destacados">¿Por qué Drunkitties?</h2>
@@ -98,8 +113,7 @@
           <div>
             <dt>¿Qué pasa con mis imágenes?</dt>
             <dd>
-              Se usan únicamente para generar las variaciones solicitadas. Recuerda añadir tu clave de OpenAI en
-              Netlify para mantener todo seguro.
+              Se usan únicamente para generar las variaciones solicitadas. Recuerda añadir tu clave de OpenAI en Netlify para mantener todo seguro.
             </dd>
           </div>
           <div>
@@ -111,8 +125,7 @@
           <div>
             <dt>¿Qué hago si aparece un error?</dt>
             <dd>
-              Asegúrate de que la imagen pesa menos de 4&nbsp;MB y que tu clave de OpenAI es válida. Si el problema
-              continúa, vuelve a intentarlo en unos minutos.
+              Asegúrate de que la imagen pesa menos de 4&nbsp;MB y que tu clave de OpenAI es válida. Si el problema continúa, vuelve a intentarlo en unos minutos.
             </dd>
           </div>
         </dl>
@@ -120,8 +133,16 @@
     </main>
 
     <footer class="site-footer">
-      <p>Hecho con ❤️ para amantes de los bigotes inquietos.</p>
-      <p class="site-footer__credits">Listo para desplegar en Netlify.</p>
+      <div class="site-footer__inner">
+        <p>Hecho con ❤️ para amantes de los bigotes inquietos.</p>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="/sobre-nosotros/">Sobre nosotros</a>
+          <a href="/privacidad/">Política de privacidad</a>
+          <a href="/terminos/">Términos y condiciones</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <p class="site-footer__credits">© 2025 Drunkitties Studio. Todos los derechos reservados.</p>
+      </div>
     </footer>
 
     <script src="app.js" type="module"></script>

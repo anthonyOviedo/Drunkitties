@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkout · Drunkitties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__container">
+        <a class="site-logo" href="/">🐾 Drunkitties</a>
+        <nav class="site-nav" aria-label="Principal">
+          <a href="/">Inicio</a>
+          <a href="/productos/">Productos</a>
+          <a href="/personalizar/">Personalizar</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <a class="site-header__cta" href="/personalizar/">Empieza ahora</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero">
+        <h1 class="page-hero__title">Checkout / Pago</h1>
+        <p class="page-hero__subtitle">Ingresa tus datos y completa la compra para que tu mascota llegue a todos tus accesorios.</p>
+      </section>
+
+      <section class="checkout-grid">
+        <form class="customization__form" aria-label="Formulario de pago">
+          <div class="form-field">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" placeholder="Nombre y apellidos" />
+          </div>
+          <div class="form-field">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="nombre@ejemplo.com" />
+          </div>
+          <div class="form-field">
+            <label for="address">Dirección de envío</label>
+            <input type="text" id="address" name="address" placeholder="Calle, número, ciudad" />
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="zip">Código postal</label>
+              <input type="text" id="zip" name="zip" placeholder="00000" />
+            </div>
+            <div class="form-field">
+              <label for="country">País</label>
+              <input type="text" id="country" name="country" placeholder="México" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="card">Número de tarjeta</label>
+            <input type="text" id="card" name="card" placeholder="0000 0000 0000 0000" />
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="expiry">Fecha de expiración</label>
+              <input type="text" id="expiry" name="expiry" placeholder="MM/AA" />
+            </div>
+            <div class="form-field">
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" name="cvv" placeholder="123" />
+            </div>
+          </div>
+          <button class="submit-button" type="button">Confirmar y pagar</button>
+        </form>
+
+        <aside class="customization__preview">
+          <h3>Resumen del pedido</h3>
+          <div class="summary-card">
+            <p><strong>Mousepad personalizado</strong></p>
+            <p>Estilo: Pastel ilustrado</p>
+            <p>Tamaño: Pequeño</p>
+            <p><strong>Taza personalizada</strong></p>
+            <p>Estilo: Comic pop</p>
+            <p class="summary-card__total">Total: €21,000</p>
+          </div>
+          <p>Al confirmar aceptas nuestras <a href="/terminos/">condiciones de servicio</a> y la <a href="/privacidad/">política de privacidad</a>.</p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>Hecho con ❤️ para amantes de los bigotes inquietos.</p>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="/sobre-nosotros/">Sobre nosotros</a>
+          <a href="/privacidad/">Política de privacidad</a>
+          <a href="/terminos/">Términos y condiciones</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <p class="site-footer__credits">© 2025 Drunkitties Studio. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>

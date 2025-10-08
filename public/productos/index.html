@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Catálogo de productos · Drunkitties</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__container">
+        <a class="site-logo" href="/">🐾 Drunkitties</a>
+        <nav class="site-nav" aria-label="Principal">
+          <a href="/">Inicio</a>
+          <a href="/productos/" aria-current="page">Productos</a>
+          <a href="/personalizar/">Personalizar</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <a class="site-header__cta" href="/personalizar/">Empieza ahora</a>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <section class="page-hero page-hero--center">
+        <h1 class="page-hero__title">Catálogo de productos</h1>
+        <p class="page-hero__subtitle">Personaliza tu estilo con el encanto de tu mascota 🐾✨</p>
+        <div class="pill-group" role="tablist" aria-label="Categorías de producto">
+          <span class="pill is-active" role="tab" aria-selected="true">Todo</span>
+          <span class="pill" role="tab" aria-selected="false">Mousepads</span>
+          <span class="pill" role="tab" aria-selected="false">Tazas</span>
+          <span class="pill" role="tab" aria-selected="false">Camisetas</span>
+          <span class="pill" role="tab" aria-selected="false">Hoodies</span>
+        </div>
+      </section>
+
+      <section class="product-grid" aria-label="Listado de productos">
+        <article class="product-card">
+          <div class="product-card__header">
+            <span class="product-card__emoji" aria-hidden="true">🖱️</span>
+            <div>
+              <p class="product-card__title">Mousepad personalizado</p>
+              <p class="product-card__price">€8,000</p>
+            </div>
+          </div>
+          <p>Convierte tu escritorio en una galería dedicada a tu mascota con acabados premium y base antideslizante.</p>
+          <a class="product-card__cta" href="/personalizar/">Personalizar</a>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__header">
+            <span class="product-card__emoji" aria-hidden="true">☕</span>
+            <div>
+              <p class="product-card__title">Taza personalizada</p>
+              <p class="product-card__price">€6,500</p>
+            </div>
+          </div>
+          <p>Empieza el día con una dosis de ternura felina y un diseño resistente al microondas y lavavajillas.</p>
+          <a class="product-card__cta" href="/personalizar/">Personalizar</a>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__header">
+            <span class="product-card__emoji" aria-hidden="true">👕</span>
+            <div>
+              <p class="product-card__title">Camiseta personalizada</p>
+              <p class="product-card__price">€12,000</p>
+            </div>
+          </div>
+          <p>Algodón orgánico, tintas vibrantes y tu mascota protagonizando cada mirada. Disponible en todas las tallas.</p>
+          <a class="product-card__cta" href="/personalizar/">Personalizar</a>
+        </article>
+
+        <article class="product-card">
+          <div class="product-card__header">
+            <span class="product-card__emoji" aria-hidden="true">🧥</span>
+            <div>
+              <p class="product-card__title">Hoodie personalizado</p>
+              <p class="product-card__price">€18,000</p>
+            </div>
+          </div>
+          <p>Comodidad absoluta, interior afelpado y la personalidad de tu mascota bordada en cada detalle.</p>
+          <a class="product-card__cta" href="/personalizar/">Personalizar</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>Hecho con ❤️ para amantes de los bigotes inquietos.</p>
+        <nav class="footer-nav" aria-label="Legal">
+          <a href="/sobre-nosotros/">Sobre nosotros</a>
+          <a href="/privacidad/">Política de privacidad</a>
+          <a href="/terminos/">Términos y condiciones</a>
+          <a href="/contacto/">Contacto</a>
+        </nav>
+        <p class="site-footer__credits">© 2025 Drunkitties Studio. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
+</html>
