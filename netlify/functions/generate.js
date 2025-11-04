@@ -1,85 +1,78 @@
-const fs = require('fs');
-const os = require('os');
-const path = require('path');
-const { OpenAI } = require('openai');
+let uuidv4;
 
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
-
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-
-exports.handler = async (event) => {
-  if (event.httpMethod !== 'POST') {
-    return {
-      statusCode: 405,
-      headers: { 'Allow': 'POST' },
-      body: JSON.stringify({ error: 'Método no permitido' })
-    };
-  }
-
-  if (!process.env.OPENAI_API_KEY) {
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: 'Falta la variable de entorno OPENAI_API_KEY.' })
-    };
-  }
-
-  if (!event.body) {
-    return {
-      statusCode: 400,
-      body: JSON.stringify({ error: 'No se recibió ninguna imagen.' })
-    };
-  }
-
+const handler = async (event) => {
   try {
-    const payload = JSON.parse(event.body);
-    const { image, size = '512x512' } = payload;
-    let { variations = 2 } = payload;
+    if (!uuidv4) {
+      const { v4 } = await import('uuid');
+      uuidv4 = v4;
+    }
 
-    if (!image) {
+    const { positivePrompt, negativePrompt, seedImage, strength, width, height, steps } = JSON.parse(event.body || '{}');
+
+    if (!seedImage) {
       return {
         statusCode: 400,
-        body: JSON.stringify({ error: 'La imagen es obligatoria.' })
+        body: JSON.stringify({ error: "El parámetro 'seedImage' (imagen base) es obligatorio para image-to-image." }),
       };
     }
 
-    variations = clamp(parseInt(variations, 10) || 2, 1, 4);
+    const payload = [
+      {
+        taskType: 'imageInference',
+        taskUUID: uuidv4(),
+        model: 'runware:101@1',
+        positivePrompt: positivePrompt || 'Artistic portrait in watercolor style',
+        negativePrompt: negativePrompt || '',
+        seedImage,
+        strength: strength || 0.9,
+        width: width || 1024,
+        height: height || 1024,
+        steps: steps || 30,
+      },
+    ];
+    
+    console.log('Payload enviado a Runware:', JSON.stringify(payload, null, 2));
+    
+    const response = await fetch('https://api.runware.ai/v1', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.RUNWARE_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
 
-    const buffer = Buffer.from(image, 'base64');
-    const tempDir = await fs.promises.mkdtemp(path.join(os.tmpdir(), 'drunkitties-'));
-    const tempFile = path.join(tempDir, 'mascota.png');
-    await fs.promises.writeFile(tempFile, buffer);
+    const data = await response.json();
+    console.log('Respuesta completa de Runware:', JSON.stringify(data, null, 2));
 
-    try {
-      const response = await openai.images.variations({
-        model: 'gpt-image-1',
-        image: fs.createReadStream(tempFile),
-        n: variations,
-        size
-      });
-
-      const images = (response.data || [])
-        .map((img) => img.b64_json)
-        .filter(Boolean);
-
+    if (!response.ok) {
+      console.error('Error en la API de Runware:', data);
       return {
-        statusCode: 200,
-        body: JSON.stringify({ images })
+        statusCode: response.status,
+        body: JSON.stringify({ error: data.errors || 'Error al generar la imagen.' }),
       };
-    } finally {
-      await fs.promises.rm(tempDir, { recursive: true, force: true });
     }
+
+    const imageURL = data?.data?.[0]?.imageURL;
+
+    if (!imageURL) {
+      return {
+        statusCode: 500,
+        body: JSON.stringify({ error: 'No se encontró imagen en la respuesta de Runware.' }),
+      };
+    }
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ imageURL }),
+    };
   } catch (error) {
-    console.error('Fallo en la función generate:', error);
-    const message = error?.response?.data?.error?.message || error.message || 'Fallo generando imagen.';
+    console.error('Error interno en la función generate:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Fallo generando imagen.', details: message })
+      body: JSON.stringify({ error: error.message }),
     };
   }
 };
+
+module.exports = { handler };

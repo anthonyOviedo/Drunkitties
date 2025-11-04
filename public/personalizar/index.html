@@ -35,13 +35,13 @@
 
       <section class="customization">
         <div class="customization__grid">
-          <form class="customization__form">
+          <form class="customization__form" id="personalizationForm">
             <div class="form-field">
               <label for="petImagePersonalizar">Imagen de tu mascota</label>
               <input type="file" id="petImagePersonalizar" name="petImagePersonalizar" accept="image/*" />
               <p class="field-hint">JPG o PNG, máximo 4 MB. Usa una foto nítida y bien iluminada.</p>
             </div>
-
+          
             <div class="form-field">
               <label for="artStyle">Estilo artístico</label>
               <select id="artStyle" name="artStyle">
@@ -51,7 +51,7 @@
                 <option value="minimalista">Minimalista monocromático</option>
               </select>
             </div>
-
+          
             <div class="form-field">
               <label for="productSize">Tamaño del producto</label>
               <select id="productSize" name="productSize">
@@ -60,19 +60,20 @@
                 <option value="grande">Grande (36 × 30 cm)</option>
               </select>
             </div>
-
+          
             <div class="form-field">
               <label for="notes">Notas adicionales</label>
               <textarea id="notes" name="notes" rows="4" placeholder="Cuéntanos los detalles que quieres resaltar."></textarea>
             </div>
-
-            <button class="submit-button" type="button">Generar vista previa</button>
+          
+            <button class="submit-button" type="submit">Generar vista previa</button>
           </form>
 
           <aside class="customization__preview">
             <h3>Vista previa generada</h3>
             <p>¡Aquí aparecerá tu diseño personalizado una vez que generes la vista previa!</p>
             <div class="preview" aria-live="polite">
+              <div class="spinner" style="display: none;"></div>
               <p class="preview__placeholder">Sube una imagen para desbloquear la magia felina.</p>
             </div>
             <div class="summary-card">
@@ -99,5 +100,6 @@
         <p class="site-footer__credits">© 2025 Drunkitties Studio. Todos los derechos reservados.</p>
       </div>
     </footer>
+    <script src="./script.js"></script>
   </body>
 </html>
